@@ -12,7 +12,8 @@ var noiseScale = 0.001
 
 function setup() {
 	createCanvas(windowWidth, windowHeight);
-	background(182, 130, 69);
+	background(182, 130, 70);
+
 }
 
 function draw() {
