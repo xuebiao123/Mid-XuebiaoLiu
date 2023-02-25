@@ -1,68 +1,107 @@
-n = 0.01
-a = 0.1
-particle = []
-particle2 = []
-focus = 0
+var strArr = ["The shadow of the dome of pleasure"];
+var x = 0;
+var y = 0;
+var h = 0;
+var textsize = 0;
 
-// 背景
+let particles = []
+let colors = []
+
+var num = 1000
+var noiseScale = 0.001
+
 function setup() {
 	createCanvas(windowWidth, windowHeight);
-	background(175, 150, 70)
-	for (i = 0; i < 1000; i++) {
-	particle.push(createVector(random(width), random(height)))
-			particle2.push(createVector(random(width), random(height)))
-	}
 }
 
 function draw() {
-
-	for (i = 0; i < random(200, 1000); i++) {
-	p = particle[i]
-		p2 = particle2[i]
-				strokeWeight(random(2))
-		stroke(0, random(0, random(1, random(2, random(5, 50)))))
-		noFill()
-		circle(p.x, p.y, random(1, random(20, 150)))
-				stroke(0, random(10, random(15, 50)))
-						strokeWeight(map(sin(a/100), -1, 1, 1, random(1, 5)))
-		point(p.x, p.y)
-		line(p.x - cos(a)*random(20), p.y, p.x + cos(a)*random(20), p.y)
-		strokeWeight(1)
-		stroke(0, 100)
-		//point(p.x, p.y)
-		p.x += random(-map(sin(n), -1, 1, 0, map(sin(a), -1, 1, 0, random(5, random(5, 20)))), map(sin(n), -1, 1, 0, map(sin(a), -1, 1, 0, random(5, random(5, 20)))))
-		p.y += random(map(cos(n), -1, 1, 0, map(cos(a), -1, 1, 0, random(5, random(5, 20)))), -map(cos(n), -1, 1, 0, map(cos(a), -1, 1, 0, random(5, random(5, 20)))))
-		
-						strokeWeight(random(2))
-		stroke(255, random(0, random(1, random(2, random(5, 50)))))
-				circle(p2.x, p2.y, random(1, random(20, 150)))
-				stroke(255, random(10, random(15, 30)))
-						strokeWeight(map(cos(n/10), -1, 1, 1, random(1, 5)))
-		point(p2.x, p2.y)
-				line(p2.x, p2.y - sin(n)*random(20), p2.x, p2.y + sin(n)*random(20))
-		strokeWeight(1)
-		stroke(255, 100)
-		//point(p2.x, p2.y)
-		p2.x += random(-map(cos(n), -1, 1, 0, map(cos(a), -1, 1, 0, random(5, random(5, 20)))), map(cos(n), -1, 1, 0, map(cos(a), -1, 1, 0, random(5, random(5, 20)))))
-		p2.y += random(map(sin(n), -1, 1, 0, map(sin(a), -1, 1, 0, random(5, random(5, 20)))), -map(sin(n), -1, 1, 0, map(sin(a), -1, 1, 0, random(5, random(5, 20)))))
-		
-		stroke(185 + (sin(n)*10), 155, 75, random([0, random(0, random(0, 5))]))
-		strokeWeight(1)
-		line(p.x, p2.y, p2.x, p.y)
-		line(p.x, p.y, p2.x, p2.y)
-				stroke(160 + (sin(n)*20), 50, 10, random([0, random(0, random(0, 10))]))
-		line(p.x, p.y, random(width), height)
-				line(p2.x, p2.y, random(width), height)
-		
-		stroke(175, 150, 70, 20)
-		strokeWeight(1)
-		point(random(p.x, p2.x), random(p.y, p2.y))
-		
+	randomSeed(mouseX);
+	push();
+	background(0,5);
+    back()
+		for (var i = 0; i < num; i++) {
+		particles.push(createVector(width / 2, height / 2))
+		colors.push(255, 164, 4);
 	}
-	n += map(cos(a), -1, 1, 0, map(sin(a/100), -1, 1, 0.01, 0.00001))
-	a += sin(n)	
+	pop();
+
+    push();
+	for (let i = 1; i < 30; i++) {
+		noFill();
+		stroke(255, 164, 4, 100);
+		strokeWeight(1);
+		let y2 = i*random(height/4*0.04);
+		bezier(0, y2, width/4, 4, 3*width/4, height*0.75, width, i*random(height/2));
+
+		stroke(255, 164, 4, 10);
+		strokeWeight(5);
+		let y3 = i*random(height/4*0.04);
+		bezier(0, y3, width/4, 4, 3*width/4, height*0.75, width, i*random(height/2));
+	}
+	pop();
+
+	push();
+	for(var i = 0; i < 50; i++){
+		  var rand = int (random(2));
+		  var str = strArr[rand];                 
+		  x = int(random(0,width));
+		  y = int(random(0,height));
+		  textsize = int(random(6,30));
+		  h = int(random(0,width));
+	
+		  fill(205, 187, 127,100);
+		  textSize(textsize);
+		  text(str,x,y);
+		}
+	pop();
 }
 
-function onScreen(v) {
-return v.x < width - focus && v.y < height - focus && v.x > focus && v.y > focus
+function back() {
+	
+	colorMode(HSB,360,100,100,1)
+	rID4 =25 
+	rID4_2 =25
+	//數量  
+	rID7= 400  
+	////大顆大小
+	rID8=random(100,400)
+	////小顆大小
+	rID9=rID8/10
+	//back顏色
+	rID10=25  
+	rID11=25   
+	
+	//數量
+	for(var b=1;b<rID7;b++){   
+	push()
+	///大小
+	rID5=map(b,0,rID7,rID8,10) 
+	//随机形状
+	rID6=random(0,100)   
+	translate(random(width),random(height))
+
+		var clr1 = color(rID4, 62,30,0.01)
+		var clr2 = color(rID4_2, 60, 40,0.1)
+		
+		let ratio = map(b, 0, rID7, 0, 0.99)  
+        var clr3 = lerpColor(clr1, clr2, ratio)
+
+	for(var c=0;c<5;c++){
+	
+		beginShape()
+		for (var a = 0; a < TWO_PI; a+=0.1) {	
+	let xoff=cos(a)+1
+	let yoff=sin(a)+1
+	let r=map(noise(xoff,yoff,rID6),0,1,10,rID5-c*10)
+			let x=r*cos(a)
+			let y=r*sin(a)
+			
+			noStroke()
+			fill(clr3)
+			vertex(x,y)
+	}
+	endShape(CLOSE)
+	}
+pop()
+	}
 }
