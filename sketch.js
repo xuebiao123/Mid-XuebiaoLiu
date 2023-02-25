@@ -12,6 +12,7 @@ var noiseScale = 0.001
 
 function setup() {
 	createCanvas(windowWidth, windowHeight);
+	background(182, 130, 69);
 }
 
 function draw() {
@@ -62,7 +63,7 @@ function back() {
 	rID4 =25 
 	rID4_2 =25
 	//數量  
-	rID7= 400  
+	rID7= 500  
 	////大顆大小
 	rID8=random(100,400)
 	////小顆大小
