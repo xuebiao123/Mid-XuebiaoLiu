@@ -3,32 +3,32 @@ h1{
   margin:10px;
   padding:5px 10px;
   position: fixed; 
-  left: 1cm; 
-  top: 11.3cm; 
+  left: 2.7%; 
+  top: 54%; 
  }
 
  h2{
   margin:10px;
   padding:5px 10px;
   position: fixed; 
-  left: 1cm; 
-  top: 18.3cm; 
+  left: 2.7%; 
+  top: 87%; 
  }
 
  h3{
   font-size: 15px; 
   font-family: fantasy;
   position: fixed;
-  left: 33.5cm;
-  top: 18.83cm;
+  left: 88%;
+  top: 90.2%;
 }
 
  h4{
     font-size: 15px; 
     font-family: fantasy;
     position: fixed;
-    left: 31.4cm;
-    top: 18.7cm;
+    left: 82.3%;
+    top: 89.5%;
  }
  
 a{
