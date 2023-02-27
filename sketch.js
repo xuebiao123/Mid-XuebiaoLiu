@@ -1,4 +1,4 @@
-var strArr = ["The shadow of the dome of pleasure"];
+var TextArr = ["The shadow of the dome of pleasure","Floated midway on the waves","A damsel with a dulcimer","A damsel with a dulcimer","To such a deep delight 'twould win me"];
 var x = 0;
 var y = 0;
 var h = 0;
@@ -11,7 +11,9 @@ var num = 1000
 var noiseScale = 0.001
 
 function setup() {
-	createCanvas(windowWidth, windowHeight);
+	canvas = createCanvas(windowWidth, windowHeight);
+	canvas.position(0,0);
+	canvas.style('z-index','-1');
 	background(182, 130, 70);
 
 }
@@ -45,7 +47,7 @@ function draw() {
 	push();
 	for(var i = 0; i < 50; i++){
 		  var rand = int (random(2));
-		  var str = strArr[rand];                 
+		  var str = TextArr[rand];                 
 		  x = int(random(0,width));
 		  y = int(random(0,height));
 		  textsize = int(random(6,30));
