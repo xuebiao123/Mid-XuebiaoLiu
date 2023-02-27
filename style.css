@@ -1,9 +1,27 @@
 h1{
+ 
   margin:10px;
   padding:5px 10px;
   position: fixed; 
   left: 1cm; 
   top: 11.3cm; 
+ }
+
+ h2{
+    font-size: 15px; 
+    font-family: fantasy;
+    position: fixed;
+    left: 31.4cm;
+    top: 18.7cm;
+ }
+
+ h3{
+       
+       font-size: 15px; 
+       font-family: fantasy;
+       position: fixed;
+       left: 33.5cm;
+       top: 18.6cm;
  }
 
  h4{
@@ -13,3 +31,10 @@ h1{
   left: 1cm; 
   top: 18.3cm; 
  }
+a{
+  color:black;
+}
+
+a:hover{
+  color:#bbbbbb;
+}
