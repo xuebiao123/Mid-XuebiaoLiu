@@ -8,29 +8,30 @@ h1{
  }
 
  h2{
-    font-size: 15px; 
-    font-family: fantasy;
-    position: fixed;
-    left: 31.4cm;
-    top: 18.7cm;
- }
-
- h3{
-       
-       font-size: 15px; 
-       font-family: fantasy;
-       position: fixed;
-       left: 33.5cm;
-       top: 18.6cm;
- }
-
- h4{
   margin:10px;
   padding:5px 10px;
   position: fixed; 
   left: 1cm; 
   top: 18.3cm; 
  }
+
+ h3{
+       
+  font-size: 15px; 
+  font-family: fantasy;
+  position: fixed;
+  left: 33.5cm;
+  top: 18.83cm;
+}
+
+ h4{
+    font-size: 15px; 
+    font-family: fantasy;
+    position: fixed;
+    left: 31.4cm;
+    top: 18.7cm;
+ }
+ 
 a{
   color:black;
 }
